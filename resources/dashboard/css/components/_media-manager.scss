@@ -1,0 +1,189 @@
+// Mantra Tourus LLC
+// Copyright (c) 2020-2022
+
+/*==
+ *== Media Manager
+ *== ======================================= ==*/
+
+$border-color: rgba(#000, 0.1);
+$border-color: #c9cfd2;
+
+.media-manager-container {
+  border: 1px solid #c9cfd2;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 .125rem .25rem rgba(28, 43, 54, .075);
+}
+
+.media-manager {
+  position: relative;
+
+  .mm-busy & {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &__bar,
+  &__dir {
+    padding: 0.5rem 1.5rem;
+    user-select: none;
+    border-bottom: 1px solid $border-color;
+  }
+  &__bar {
+    display: flex;
+    align-items: center;
+    min-height: 20px;
+    border-radius: 4px 4px 0 0;
+    background: #e5e9ec;
+  }
+
+  &__path {
+    font-size: 15px;
+    padding: 0.25rem 1rem;
+    cursor: default;
+
+    a {
+      cursor: pointer;
+      text-decoration: underline;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  &__main {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: calc(100vh - 220px);
+  }
+
+  &__list {
+    display: grid;
+    padding: 1.5rem;
+    grid-gap: 1.5rem;
+    grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  &__object {
+  }
+}
+
+.mm-modal-content {
+  .mm-busy & {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 0.5rem 1.5rem;
+    user-select: none;
+    border-bottom: 1px solid $border-color;
+    background: #e5e9ec;
+  }
+
+  &__path {
+    font-size: 15px;
+    padding: 0.25rem 1rem;
+    cursor: default;
+    a {
+      cursor: pointer;
+      text-decoration: underline;
+      &:hover { color: red; }
+    }
+  }
+
+  &__list {
+    display: grid;
+    padding: 1.5rem;
+    grid-gap: 1.5rem;
+    grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  &__object {
+  }
+}
+
+
+.mm-object {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  user-select: none;
+  transition: 0.15s ease;
+  color: #495862;
+  border: 1px solid #e5e9ec;
+  border-radius: 4px;
+  background: #f3f5f6;
+
+  &__preview {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+  &__icon {
+    width: 48px;
+    height: 48px;
+    opacity: 0.7;
+  }
+  &__img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  &__main {
+    flex-grow: 1;
+    padding-left: 12px;
+  }
+
+  &__name {
+    font-size: 16px;
+  }
+
+  &__meta {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+  &__size {
+    font-weight: bold;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  //==
+  //== Marked
+  //== ======================================= ==//
+
+  &:hover {
+    border-color: rgba(#3f6adb, 0.3);
+    background-color: rgba(#3f6adb, 0.2);
+  }
+
+  &_marked {
+    color: #fff !important;
+    border-color: darken(#3f6adb, 5%) !important;
+    background-color: #3f6adb !important;
+  }
+}
+
+///////////////////////////
+
+.mm-modal {
+  &__body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: calc(100vh - 250px);
+    min-height: 100px;
+    border-top: 1px solid #e9ecef;
+  }
+}

@@ -1,0 +1,32 @@
+// Mantra Tourus LLC
+// Copyright (c) 2020-2022
+
+.field-image {
+  display: grid;
+  max-width: 700px;
+  grid-template-columns: 100px 1fr;
+
+  &__preview {
+    display: flex;
+    flex-shrink: 0;
+    width: 100px;
+    border: 1px solid #000;
+    background: #000;
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    object-fit: contain;
+  }
+
+  &__main {
+    flex-grow: 1;
+    padding-left: 1rem;
+  }
+
+  .input-group {
+    max-width: none;
+  }
+}
